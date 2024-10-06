@@ -7,6 +7,8 @@ class MyTheme {
   static const Color darkPrimaryColor = Color(0xff141A2E);
   static const Color yellowColor = Color(0xffFACC1D);
   static ThemeData lightTheme = ThemeData(
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          selectedItemColor: blackColor, unselectedItemColor: whiteColor),
       textTheme: TextTheme(
           titleLarge: TextStyle(
               fontSize: 30, fontWeight: FontWeight.w700, color: blackColor),
