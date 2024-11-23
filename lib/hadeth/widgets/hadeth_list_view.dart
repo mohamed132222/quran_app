@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
+import '../../my_theme/my_theme.dart';
+import '../../provider/provider.dart';
 import '../screens/hadeth_details_screen.dart';
 import '../screens/hadeth_screen.dart';
 
@@ -10,12 +14,15 @@ class HadethListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigData>(context);
     return Expanded(
         child: ListView.separated(
       separatorBuilder: (context, index) => Divider(
-        height: 10,
+        height: 10.h,
         thickness: 3,
-        color: Theme.of(context).primaryColor,
+        color: provider.appTheme == ThemeMode.light
+            ? MyTheme.lightPrimaryColor
+            : MyTheme.yellowColor,
       ),
       itemBuilder: (context, index) {
         return InkWell(
@@ -28,10 +35,15 @@ class HadethListView extends StatelessWidget {
           child: Center(
             child: Text(
               ahadethList[index].title,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleMedium!
-                  .copyWith(fontWeight: FontWeight.w400),
+              style: provider.appTheme == ThemeMode.light
+                  ? Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontWeight: FontWeight.w400)
+                  : Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(color: MyTheme.whiteColor),
             ),
           ),
         );

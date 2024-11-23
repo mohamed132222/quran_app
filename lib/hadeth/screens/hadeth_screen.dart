@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:quran_app/hadeth/widgets/hadeth_list_view.dart';
+
+import '../../my_theme/my_theme.dart';
+import '../../provider/provider.dart';
 
 class HadethScreen extends StatefulWidget {
   @override
@@ -13,6 +18,8 @@ class _HadethScreenState extends State<HadethScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigData>(context);
+
     if (ahadethList.isEmpty) {
       loadHadeth();
     }
@@ -20,19 +27,26 @@ class _HadethScreenState extends State<HadethScreen> {
       children: [
         Center(child: Image.asset("assets/images/hadeth_logo.png")),
         Divider(
-          height: 5,
-          thickness: 3,
-          color: Theme.of(context).primaryColor,
-        ),
+            height: 5.h,
+            thickness: 3,
+            color: provider.appTheme == ThemeMode.light
+                ? MyTheme.lightPrimaryColor
+                : MyTheme.yellowColor),
         Text(
           AppLocalizations.of(context)!.hadeth_name,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: provider.appTheme == ThemeMode.light
+              ? Theme.of(context).textTheme.titleMedium
+              : Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(color: MyTheme.whiteColor),
         ),
         Divider(
-          height: 5,
-          thickness: 3,
-          color: Theme.of(context).primaryColor,
-        ),
+            height: 5.h,
+            thickness: 3,
+            color: provider.appTheme == ThemeMode.light
+                ? MyTheme.lightPrimaryColor
+                : MyTheme.yellowColor),
         HadethListView(ahadethList: ahadethList)
       ],
     );

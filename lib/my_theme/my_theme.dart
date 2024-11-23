@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyTheme {
   static const Color lightPrimaryColor = Color(0xffB7935F);
@@ -11,16 +12,31 @@ class MyTheme {
           selectedItemColor: blackColor, unselectedItemColor: whiteColor),
       textTheme: TextTheme(
           titleLarge: TextStyle(
-              fontSize: 30, fontWeight: FontWeight.w700, color: blackColor),
+              fontSize: 30.sp, fontWeight: FontWeight.w700, color: blackColor),
           titleMedium: TextStyle(
-              fontSize: 25, fontWeight: FontWeight.w600, color: blackColor),
+              fontSize: 25.sp, fontWeight: FontWeight.w600, color: blackColor),
           titleSmall: TextStyle(
-              fontSize: 12, fontWeight: FontWeight.w400, color: blackColor)),
+              fontSize: 12.sp, fontWeight: FontWeight.w400, color: blackColor)),
       scaffoldBackgroundColor: Colors.transparent,
       primaryColor: lightPrimaryColor,
       appBarTheme: AppBarTheme(
           centerTitle: true,
           backgroundColor: Colors.transparent,
           elevation: 0));
-  static ThemeData darkTheme = ThemeData();
+  static ThemeData darkTheme = ThemeData(
+      textTheme: TextTheme(
+          titleLarge: TextStyle(
+              fontSize: 30.sp, fontWeight: FontWeight.w700, color: yellowColor),
+          titleMedium: TextStyle(
+              fontSize: 25.sp, fontWeight: FontWeight.w600, color: yellowColor),
+          titleSmall: TextStyle(
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w400,
+              color: yellowColor)),
+      scaffoldBackgroundColor: Colors.transparent,
+      primaryColor: darkPrimaryColor,
+      appBarTheme: AppBarTheme(
+          centerTitle: true,
+          backgroundColor: Colors.transparent,
+          elevation: 0));
 }

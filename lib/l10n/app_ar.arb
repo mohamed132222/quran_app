@@ -5,5 +5,13 @@
   "hadeth": "حديث",
   "radio": "راديو",
   "sebha": "سبحة",
-  "sura_name": "اسم السورة"
+  "sura_name": "اسم السورة",
+  "theme": "السمة",
+    "language": "اللغة",
+    "english": "الإنجليزية",
+    "arabic": "العربية",
+    "dark": "داكن",
+    "light": "فاتح",
+    "settings": "الإعدادات",
+     "numberoftasbeeh": "عدد التسبيحات"
 }

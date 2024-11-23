@@ -5,6 +5,14 @@
 "hadeth":"Hadeth",
 "radio":"Radio",
 "sebha":"Sebha",
-"sura_name":"Sura Name"
+"sura_name":"Sura Name",
+"theme":"Theme",
+"language":"Language",
+"english":"English",
+"arabic":"Arabic",
+"dark":"Dark",
+"light":"Light",
+"settings":"Settings",
+ "numberoftasbeeh": "Number Of Tasbeeh"
 
 }
